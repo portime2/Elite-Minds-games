@@ -1,0 +1,333 @@
+/* ══════════════════════════════════════
+  /* ══════════════════════════════════════════════
+   🎮 PIEDRA, PAPEL O TIJERA
+   ⚡ DISEÑO GAMER NEÓN - PERSONALIZADO
+══════════════════════════════════════════════ */
+
+/* ── Configuración general ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  /* Fondo gamer */
+  background:
+    radial-gradient(circle at 20% 20%, #5b21b6 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, #0369a1 0%, transparent 30%),
+    linear-gradient(135deg, #050014, #10002b 50%, #001827);
+
+  overflow-x: hidden;
+}
+
+/* ── Título principal ── */
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 35px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 15px #00eaff,
+    0 0 30px #8b5cf6;
+
+  animation: brilloTitulo 2s infinite alternate;
+}
+
+/* Animación del título */
+@keyframes brilloTitulo {
+  from {
+    text-shadow:
+      0 0 5px #00eaff,
+      0 0 15px #00eaff;
+  }
+
+  to {
+    text-shadow:
+      0 0 10px #8b5cf6,
+      0 0 25px #00eaff,
+      0 0 40px #8b5cf6;
+  }
+}
+
+/* ── Marcador ── */
+.marcador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 30px auto;
+  max-width: 650px;
+}
+
+/* Tarjetas del marcador */
+.marcador > div {
+  min-width: 190px;
+  padding: 22px;
+
+  border: 2px solid #00eaff;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 0 15px rgba(0, 234, 255, 0.35),
+    inset 0 0 20px rgba(139, 92, 246, 0.1);
+
+  backdrop-filter: blur(15px);
+
+  transition: 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.marcador > div:hover {
+  transform: translateY(-5px);
+
+  border-color: #a855f7;
+
+  box-shadow:
+    0 0 20px #8b5cf6,
+    0 0 35px rgba(0, 234, 255, 0.3);
+}
+
+/* ── Números del marcador ── */
+#puntos-jugador,
+#puntos-computadora {
+  display: block;
+  font-size: 2.8rem;
+  margin-top: 8px;
+
+  color: #00eaff;
+
+  text-shadow:
+    0 0 8px #00eaff,
+    0 0 20px #00eaff;
+}
+
+/* ── Elecciones ── */
+#elecciones {
+  font-size: 1.2rem;
+  margin: 30px auto;
+  padding: 18px;
+
+  max-width: 650px;
+
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #dffcff;
+
+  box-shadow:
+    0 0 15px rgba(0, 234, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+}
+
+/* ── Contenedor de botones ── */
+.opciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  margin: 45px 0;
+
+  flex-wrap: wrap;
+}
+
+/* ── Botones de Piedra, Papel y Tijera ── */
+.boton-opcion {
+  width: 130px;
+  height: 130px;
+
+  font-size: 3.8rem;
+
+  cursor: pointer;
+
+  border: 2px solid #00eaff;
+  border-radius: 25px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 234, 255, 0.15),
+      rgba(139, 92, 246, 0.15)
+    );
+
+  box-shadow:
+    0 0 10px rgba(0, 234, 255, 0.5),
+    inset 0 0 20px rgba(139, 92, 246, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  backdrop-filter: blur(10px);
+}
+
+/* ── Hover de botones ── */
+.boton-opcion:hover {
+  transform: translateY(-12px) scale(1.08);
+
+  border-color: #a855f7;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 234, 255, 0.25),
+      rgba(168, 85, 247, 0.3)
+    );
+
+  box-shadow:
+    0 0 15px #00eaff,
+    0 0 30px #8b5cf6,
+    0 0 50px rgba(0, 234, 255, 0.4);
+}
+
+/* ── Efecto al presionar ── */
+.boton-opcion:active {
+  transform: scale(0.9);
+
+  box-shadow:
+    0 0 10px #00eaff,
+    inset 0 0 20px #8b5cf6;
+}
+
+/* ── Resultado ── */
+.resultado {
+  max-width: 650px;
+
+  margin: 40px auto;
+  padding: 28px;
+
+  border: 2px solid rgba(139, 92, 246, 0.6);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 0 20px rgba(0, 234, 255, 0.05);
+
+  backdrop-filter: blur(15px);
+}
+
+/* ── Mensaje del resultado ── */
+#mensaje {
+  font-size: 1.7rem;
+  font-weight: 800;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px #ff00ff,
+    0 0 18px #8b5cf6;
+}
+
+/* ── Línea decorativa ── */
+.resultado::before {
+  content: "⚡ RESULTADO ⚡";
+
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+
+  color: #00eaff;
+
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* ── Animación de entrada ── */
+.resultado {
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Adaptación para celulares ── */
+@media (max-width: 600px) {
+
+  body {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .marcador {
+    gap: 10px;
+  }
+
+  .marcador > div {
+    min-width: 140px;
+    padding: 15px;
+  }
+
+  #puntos-jugador,
+  #puntos-computadora {
+    font-size: 2.2rem;
+  }
+
+  .opciones {
+    gap: 15px;
+    margin: 30px 0;
+  }
+
+  .boton-opcion {
+    width: 95px;
+    height: 95px;
+
+    font-size: 2.7rem;
+    border-radius: 20px;
+  }
+
+  #elecciones {
+    font-size: 1rem;
+  }
+
+  #mensaje {
+    font-size: 1.3rem;
+  }
+}
+
+/* ── Efecto de selección con teclado ── */
+.boton-opcion:focus {
+  outline: none;
+
+  border-color: #ff00ff;
+
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 25px #8b5cf6;
+}

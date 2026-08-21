@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="home-bnt" href="../principal.html">Inicio</a>
+  <div id="app">
+    <main class="game">
+
+        <header class="header">
+            <h1>🧠 Juego de Memoria</h1>
+            <p>Encuentra todas las parejas de cartas.</p>
+        </header>
+
+        <section class="panel">
+
+            <div class="info">
+                <span id="status">
+                    Haz clic en una carta para comenzar.
+                </span>
+
+                <button onclick="location.reload()">
+                    🔄 Reiniciar
+                </button>
+            </div>
+
+            <div id="board" class="board">
+                <!-- Las cartas se generan automáticamente -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="scrpt.js"></script>
+
+</body>
+
+</html>

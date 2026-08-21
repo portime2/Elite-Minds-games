@@ -1,0 +1,212 @@
+/* ===========================
+   TEMA PERSONALIZADO
+=========================== */
+:root{
+    --fondo:#090b13;
+    --fondo2:#141827;
+    --superficie:rgba(28,32,48,.92);
+    --acento:#7c5cff;
+    --acento2:#5b8cff;
+    --verde:#4ade80;
+    --rojo:#f87171;
+    --texto:#f1f5f9;
+    --texto2:#94a3b8;
+    --borde:#2d355a;
+}
+
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',system-ui,sans-serif;
+    background:
+        radial-gradient(circle at top,#232c56 0%,transparent 45%),
+        linear-gradient(135deg,var(--fondo),var(--fondo2));
+    color:var(--texto);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* ===========================
+   UTILIDADES
+=========================== */
+.oculto{
+    display:none !important;
+}
+
+/* ===========================
+   CONTENEDOR
+=========================== */
+#app{
+    width:100%;
+    max-width:700px;
+}
+
+/* ===========================
+   TARJETAS / PANTALLAS
+=========================== */
+.pantalla{
+    background:var(--superficie);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:35px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45),
+        0 0 20px rgba(124,92,255,.08);
+    animation:aparecer .45s ease;
+}
+
+/* ===========================
+   TITULOS
+=========================== */
+h1,h2,h3{
+    margin-bottom:15px;
+    text-align:center;
+}
+
+p{
+    color:var(--texto2);
+    margin-bottom:15px;
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:translateX(0);
+    }
+    25%{
+        transform:translateX(-8px);
+    }
+    75%{
+        transform:translateX(8px);
+    }
+}
+
+/* ===========================
+   GRID DE OPCIONES
+=========================== */
+.opciones-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:25px 0;
+}
+
+/* ===========================
+   BOTONES DE OPCIONES
+=========================== */
+.opcion{
+    background:#20263d;
+    border:2px solid var(--borde);
+    color:var(--texto);
+    padding:16px;
+    border-radius:14px;
+    cursor:pointer;
+    text-align:left;
+    font-size:16px;
+    transition:.25s;
+    box-shadow:0 6px 12px rgba(0,0,0,.18);
+}
+
+.opcion:hover:not(:disabled){
+    background:linear-gradient(135deg,var(--acento),var(--acento2));
+    border-color:transparent;
+    transform:translateY(-4px) scale(1.02);
+    color:white;
+}
+
+.opcion:active{
+    transform:scale(.98);
+}
+
+.opcion:disabled{
+    cursor:not-allowed;
+    opacity:.8;
+}
+
+/* ===========================
+   RESPUESTA CORRECTA
+=========================== */
+.opcion.correcto{
+    background:rgba(74,222,128,.18);
+    border-color:var(--verde);
+    color:var(--verde);
+    box-shadow:0 0 15px rgba(74,222,128,.35);
+}
+
+/* ===========================
+   RESPUESTA INCORRECTA
+=========================== */
+.opcion.incorrecto{
+    background:rgba(248,113,113,.18);
+    border-color:var(--rojo);
+    color:var(--rojo);
+    animation:shake .35s ease;
+    box-shadow:0 0 15px rgba(248,113,113,.35);
+}
+
+/* ===========================
+   BOTONES GENERALES
+=========================== */
+button{
+    background:linear-gradient(135deg,var(--acento),var(--acento2));
+    color:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(124,92,255,.35);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width:600px){
+
+    .pantalla{
+        padding:22px;
+    }
+
+    .opciones-grid{
+        grid-template-columns:1fr;
+    }
+
+    .opcion{
+        font-size:15px;
+    }
+
+}
