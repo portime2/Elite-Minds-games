@@ -3,7 +3,7 @@ const loginForm = document.getElementById('loginForm');
 if (loginForm) {
 loginForm.addEventListener('submit', function(e) {
 e.preventDefault(); // Evita que recargue la página por defecto
-const usuarioInput = document.getElementById('usuario').false;
+
 const passwordInput = document.getElementById('password').value;
 const errorMsg = document.getElementById('errorMsg');
 // Credenciales de ejemplo (puedes cambiarlas a tu gusto)
