@@ -1,90 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #0d47a1, #42a5f5);
-    color: white;
-    padding-top: 50px;
-    margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #0d47a1, #42a5f5);
+  color: white;
+  min-height: 100vh;
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+header {
+  background: rgba(5, 12, 25, 0.9);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 160, 255, 0.2);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 0 18px rgba(0, 170, 255, 0.6);
+}
+
+header h1::before {
+  content: "🎮 ";
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 9px 15px;
+  color: #a7b0bd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #ffffff;
+  background: rgba(0, 150, 255, 0.12);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.15);
+}
+
+/* =========================================
+   TITULO DEL JUEGO
+========================================= */
+
+body > h1 {
+  color: #e3f2fd;
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   MARCADOR
+========================================= */
+
+.marcador {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.marcador div {
+  background-color: #1565c0;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 2px solid #90caf9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   OPCIONES
+========================================= */
+
+.opciones {
+  margin: 35px 0;
+}
+
+.boton-opcion {
+  font-size: 2rem;
+  padding: 15px 25px;
+  margin: 0 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  background-color: #90caf9;
+  color: #0d47a1;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.boton-opcion:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.1);
+}
+
+.boton-opcion:active {
+  transform: scale(0.95);
+}
+
+/* =========================================
+   RESULTADO
+========================================= */
+
+.resultado {
+  width: 70%;
+  margin: 30px auto;
+  padding: 20px;
+  font-size: 1.3rem;
+  background-color: #1565c0;
+  border: 2px solid #90caf9;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#mensaje {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff59d;
+  margin-bottom: 15px;
+}
+
+#elecciones {
+  color: #e3f2fd;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* =========================================
+   PUNTUACIÓN
+========================================= */
+
+#puntos-jugador,
+#puntos-computadora {
+  color: #bbdefb;
+  font-size: 2rem;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  h1 {
-    color: #e3f2fd;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+  header h1 {
+    font-size: 23px;
   }
-  
-  .marcador {
-    display: flex;
+
+  .nav-menu {
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 30px;
   }
-  
-  .marcador div {
-    background-color: #1565c0;
-    padding: 15px 30px;
-    border-radius: 12px;
-    border: 2px solid #90caf9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  .nav-menu li a {
+    font-size: 13px;
+    padding: 8px 12px;
   }
-  
-  .opciones {
-    margin: 35px 0;
+
+  body > h1 {
+    font-size: 2rem;
+    margin-top: 30px;
   }
-  
+
+  .marcador {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
   .boton-opcion {
-    font-size: 2rem;
-    padding: 15px 25px;
-    margin: 0 12px;
-    cursor: pointer;
-    border: none;
-    border-radius: 15px;
-    background-color: #90caf9;
-    color: #0d47a1;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    font-size: 1.7rem;
+    padding: 12px 20px;
+    margin: 8px;
   }
-  
-  .boton-opcion:hover {
-    background-color: #e3f2fd;
-    transform: scale(1.1);
-  }
-  
-  .boton-opcion:active {
-    transform: scale(0.95);
-  }
-  
+
   .resultado {
-    width: 70%;
-    margin: 30px auto;
-    padding: 20px;
-    font-size: 1.3rem;
-    background-color: #1565c0;
-    border: 2px solid #90caf9;
-    border-radius: 15px;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
   }
-  
-  #mensaje {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #fff59d;
-    margin-bottom: 15px;
-  }
-  
-  #elecciones {
-    color: #e3f2fd;
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  #puntos-jugador,
-  #puntos-computadora {
-    color: #bbdefb;
-    font-size: 2rem;
-  }
+}
