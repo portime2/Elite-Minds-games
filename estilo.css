@@ -1280,82 +1280,35 @@ header h1::before {
 .about-image {
     position: relative;
 
-    margin: 45px auto 10px;
+    margin: 35px auto 10px;
 
-    max-width: 850px;
+    max-width: 600px;
 
     text-align: center;
 
-    padding: 25px;
+    padding: 10px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0, 119, 255, 0.10),
-            rgba(0, 210, 255, 0.04)
-        );
+    background: transparent;
 
-    border: 1px solid rgba(0, 170, 255, 0.18);
+    border: none;
 
-    border-radius: 22px;
+    border-radius: 20px;
 
     overflow: hidden;
 
     transition: 0.4s;
 }
 
-.about-image::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-
-    height: 180px;
-
-    background: #008cff;
-
-    border-radius: 50%;
-
-    filter: blur(80px);
-
-    opacity: 0.10;
-
-    top: -80px;
-
-    left: -70px;
-}
-
+.about-image::before,
 .about-image::after {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-
-    height: 180px;
-
-    background: #00d9ff;
-
-    border-radius: 50%;
-
-    filter: blur(80px);
-
-    opacity: 0.10;
-
-    bottom: -80px;
-
-    right: -70px;
+    display: none;
 }
 
 .about-image:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(0, 180, 255, 0.45);
+    transform: translateY(-4px);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.45),
-        0 0 30px rgba(0, 150, 255, 0.18);
+        0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .image-title {
@@ -1365,11 +1318,11 @@ header h1::before {
 
     color: #00bfff;
 
-    font-size: 20px;
+    font-size: 18px;
 
     font-weight: 800;
 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     text-shadow:
         0 0 15px rgba(0, 170, 255, 0.5);
@@ -1384,19 +1337,20 @@ header h1::before {
 
     width: 100%;
 
-    max-width: 750px;
+    max-width: 500px;
 
     height: auto;
 
     margin: auto;
 
-    border-radius: 16px;
+    border-radius: 12px;
 
-    border: 1px solid rgba(0, 180, 255, 0.25);
+    border: none;
+
+    background: transparent;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.45),
-        0 0 20px rgba(0, 150, 255, 0.12);
+        0 8px 25px rgba(0, 0, 0, 0.25);
 
     transition: 0.4s;
 }
@@ -1405,10 +1359,8 @@ header h1::before {
     transform: scale(1.02);
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.55),
-        0 0 30px rgba(0, 180, 255, 0.25);
+        0 12px 30px rgba(0, 150, 255, 0.2);
 }
-
 
 /* =========================================
    BOTON VOLVER
