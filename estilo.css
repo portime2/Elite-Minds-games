@@ -1117,13 +1117,13 @@ header h1::before {
 .about-image {
     position: relative;
 
-    margin: 35px auto 10px;
+    margin: 20px auto 5px;
 
-    max-width: 600px;
+    max-width: 400px;
 
     text-align: center;
 
-    padding: 15px;
+    padding: 10px;
 
     background: transparent;
 
