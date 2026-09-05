@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* =========================================
    LOGIN
 ========================================= */
@@ -58,7 +59,6 @@ body {
 
 .login-container::after {
     content: "";
-
     position: absolute;
 
     width: 300px;
@@ -102,7 +102,6 @@ body {
 
 .login-box::before {
     content: "🎮";
-
     display: block;
 
     font-size: 55px;
@@ -124,7 +123,6 @@ body {
 
 .login-box h2::after {
     content: " ¡Prepárate para jugar!";
-
     display: block;
 
     font-size: 14px;
@@ -604,7 +602,9 @@ header h1::before {
 }
 
 
-/* BOTON JUGAR */
+/* =========================================
+   BOTON JUGAR
+========================================= */
 
 .tarjeta span {
     position: relative;
@@ -752,7 +752,9 @@ header h1::before {
 }
 
 
-/* CONTENEDOR ACERCA */
+/* =========================================
+   CONTENEDOR ACERCA
+========================================= */
 
 .about-main {
     flex: 1;
@@ -786,7 +788,9 @@ header h1::before {
 }
 
 
-/* ICONO PRINCIPAL */
+/* =========================================
+   ICONO PRINCIPAL
+========================================= */
 
 .about-icon {
     width: 80px;
@@ -818,7 +822,9 @@ header h1::before {
 }
 
 
-/* TITULO */
+/* =========================================
+   TITULO
+========================================= */
 
 .eyebrow {
     text-align: center;
@@ -874,7 +880,9 @@ header h1::before {
 }
 
 
-/* TARJETAS */
+/* =========================================
+   TARJETAS
+========================================= */
 
 .info-card {
     position: relative;
@@ -937,7 +945,9 @@ header h1::before {
 }
 
 
-/* ICONOS */
+/* =========================================
+   ICONOS
+========================================= */
 
 .card-icon {
     position: relative;
@@ -977,7 +987,9 @@ header h1::before {
 }
 
 
-/* TITULOS */
+/* =========================================
+   TITULOS DE TARJETAS
+========================================= */
 
 .info-card h2 {
     position: relative;
@@ -1002,7 +1014,9 @@ header h1::before {
 }
 
 
-/* COLORES DE TARJETAS */
+/* =========================================
+   COLORES DE TARJETAS
+========================================= */
 
 .objetivo {
     border-top: 3px solid #008cff;
@@ -1260,6 +1274,143 @@ header h1::before {
 
 
 /* =========================================
+   IMAGEN FINAL - ACERCA DE NOSOTROS
+========================================= */
+
+.about-image {
+    position: relative;
+
+    margin: 45px auto 10px;
+
+    max-width: 850px;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 119, 255, 0.10),
+            rgba(0, 210, 255, 0.04)
+        );
+
+    border: 1px solid rgba(0, 170, 255, 0.18);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    background: #008cff;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.10;
+
+    top: -80px;
+
+    left: -70px;
+}
+
+.about-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    background: #00d9ff;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.10;
+
+    bottom: -80px;
+
+    right: -70px;
+}
+
+.about-image:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(0, 180, 255, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 150, 255, 0.18);
+}
+
+.image-title {
+    position: relative;
+
+    z-index: 2;
+
+    color: #00bfff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 15px rgba(0, 170, 255, 0.5);
+}
+
+.about-image img {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 750px;
+
+    height: auto;
+
+    margin: auto;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0, 180, 255, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(0, 150, 255, 0.12);
+
+    transition: 0.4s;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.55),
+        0 0 30px rgba(0, 180, 255, 0.25);
+}
+
+
+/* =========================================
    BOTON VOLVER
 ========================================= */
 
@@ -1447,6 +1598,7 @@ footer strong,
         padding: 35px 25px;
     }
 
+
     /* ACERCA */
 
     .about-main {
@@ -1474,6 +1626,7 @@ footer strong,
     .game-instructions {
         grid-template-columns: 1fr;
     }
+
 
     /* MENU MOVIL */
 
@@ -1514,11 +1667,38 @@ footer strong,
     }
 }
 
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .about-image {
+        margin-top: 30px;
+
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+    .image-title {
+        font-size: 17px;
+    }
+
+    .about-image img {
+        border-radius: 12px;
+    }
+}
+
+
 @media (max-width: 500px) {
 
     .about-icon {
         width: 65px;
+
         height: 65px;
+
         font-size: 34px;
     }
 
@@ -1540,5 +1720,7 @@ footer strong,
 
     .member-avatar {
         min-width: 45px;
+    }
+}
     }
 }
