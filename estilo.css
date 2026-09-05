@@ -10,10 +10,15 @@ body {
         radial-gradient(circle at 10% 20%, rgba(0, 140, 255, 0.15), transparent 25%),
         radial-gradient(circle at 90% 80%, rgba(0, 210, 255, 0.12), transparent 25%),
         #070b14;
+
     color: #f3f4f6;
+
     min-height: 100vh;
+
     display: flex;
+
     flex-direction: column;
+
     overflow-x: hidden;
 }
 
@@ -24,9 +29,13 @@ body {
 
 .login-container {
     min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     padding: 20px;
 
     background:
@@ -35,14 +44,17 @@ body {
         #070b14;
 
     position: relative;
+
     overflow: hidden;
 }
 
 .login-container::before {
     content: "";
+
     position: absolute;
 
     width: 350px;
+
     height: 350px;
 
     background: #008cff;
@@ -54,14 +66,17 @@ body {
     opacity: 0.18;
 
     top: -120px;
+
     left: -100px;
 }
 
 .login-container::after {
     content: "";
+
     position: absolute;
 
     width: 300px;
+
     height: 300px;
 
     background: #00d9ff;
@@ -73,14 +88,17 @@ body {
     opacity: 0.12;
 
     bottom: -100px;
+
     right: -80px;
 }
 
 .login-box {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
+
     max-width: 420px;
 
     padding: 45px 40px;
@@ -102,6 +120,7 @@ body {
 
 .login-box::before {
     content: "🎮";
+
     display: block;
 
     font-size: 55px;
@@ -123,6 +142,7 @@ body {
 
 .login-box h2::after {
     content: " ¡Prepárate para jugar!";
+
     display: block;
 
     font-size: 14px;
@@ -136,6 +156,7 @@ body {
 
 .input-group {
     margin-top: 22px;
+
     margin-bottom: 18px;
 
     text-align: left;
@@ -467,8 +488,6 @@ header h1::before {
    COLORES DE CADA JUEGO
 ========================================= */
 
-/* TRIVIA */
-
 .tarjeta:nth-child(1)::before {
     background: #008cff;
 }
@@ -492,9 +511,6 @@ header h1::before {
     box-shadow:
         0 5px 18px rgba(0, 140, 255, 0.35);
 }
-
-
-/* AHORCADO */
 
 .tarjeta:nth-child(2)::before {
     background: #ff1744;
@@ -520,9 +536,6 @@ header h1::before {
         0 5px 18px rgba(255, 23, 68, 0.35);
 }
 
-
-/* PIEDRA PAPEL TIJERAS */
-
 .tarjeta:nth-child(3)::before {
     background: #9c27ff;
 }
@@ -547,9 +560,6 @@ header h1::before {
         0 5px 18px rgba(156, 39, 255, 0.35);
 }
 
-
-/* MEMOGRAMA */
-
 .tarjeta:nth-child(4)::before {
     background: #00e676;
 }
@@ -573,9 +583,6 @@ header h1::before {
     box-shadow:
         0 5px 18px rgba(0, 230, 118, 0.35);
 }
-
-
-/* 3 EN RAYA */
 
 .tarjeta:nth-child(5)::before {
     background: #ff9800;
@@ -794,6 +801,7 @@ header h1::before {
 
 .about-icon {
     width: 80px;
+
     height: 80px;
 
     margin: 0 auto 20px;
@@ -873,15 +881,16 @@ header h1::before {
 .about-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 25px;
+
+    align-items: stretch;
 }
 
 
 /* =========================================
-   TARJETAS
+   TARJETAS DE INFORMACIÓN
 ========================================= */
 
 .info-card {
@@ -903,6 +912,8 @@ header h1::before {
     overflow: hidden;
 
     transition: 0.4s;
+
+    min-height: 250px;
 }
 
 .info-card::before {
@@ -1015,7 +1026,7 @@ header h1::before {
 
 
 /* =========================================
-   COLORES DE TARJETAS
+   OBJETIVO
 ========================================= */
 
 .objetivo {
@@ -1026,29 +1037,40 @@ header h1::before {
     color: #00aaff;
 }
 
-.tecnologias {
-    border-top: 3px solid #00c6ff;
-}
 
-.tecnologias h2 {
-    color: #00d9ff;
-}
+/* =========================================
+   SKILLS
+========================================= */
 
-.biblioteca {
+.skills {
     border-top: 3px solid #7c4dff;
+
+    grid-column: span 1;
 }
 
-.biblioteca h2 {
+.skills h2 {
     color: #9b7cff;
 }
 
+
+/* =========================================
+   FUTURO
+========================================= */
+
 .futuro {
     border-top: 3px solid #00e676;
+
+    grid-column: span 1;
 }
 
 .futuro h2 {
     color: #00e676;
 }
+
+
+/* =========================================
+   INTEGRANTES
+========================================= */
 
 .integrantes {
     border-top: 3px solid #ffb300;
@@ -1059,6 +1081,11 @@ header h1::before {
 .integrantes h2 {
     color: #ffb300;
 }
+
+
+/* =========================================
+   COMO JUGAR
+========================================= */
 
 .como-jugar {
     border-top: 3px solid #ff4081;
@@ -1072,46 +1099,53 @@ header h1::before {
 
 
 /* =========================================
-   LISTA DE JUEGOS
+   SKILLS / LISTA
 ========================================= */
 
 .games-list {
     position: relative;
 
-    display: flex;
+    display: grid;
 
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 8px;
+    gap: 10px;
 
     margin-top: 18px;
 }
 
 .games-list span {
-    padding: 7px 12px;
+    padding: 9px 10px;
 
     background:
-        rgba(0, 140, 255, 0.1);
+        rgba(124, 77, 255, 0.1);
 
     border:
-        1px solid rgba(0, 170, 255, 0.15);
+        1px solid rgba(124, 77, 255, 0.2);
 
-    border-radius: 20px;
+    border-radius: 12px;
 
-    color: #bdeaff;
+    color: #d2c5ff;
 
     font-size: 12px;
 
     font-weight: 600;
+
+    text-align: center;
 
     transition: 0.3s;
 }
 
 .games-list span:hover {
     background:
-        rgba(0, 150, 255, 0.2);
+        rgba(124, 77, 255, 0.2);
 
-    transform: translateY(-2px);
+    border-color: #9b7cff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(124, 77, 255, 0.15);
 }
 
 
@@ -1124,8 +1158,7 @@ header h1::before {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 14px;
 
@@ -1217,8 +1250,7 @@ header h1::before {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 12px;
 
@@ -1274,7 +1306,7 @@ header h1::before {
 
 
 /* =========================================
-   IMAGEN FINAL - ACERCA DE NOSOTROS
+   IMAGEN FINAL
 ========================================= */
 
 .about-image {
@@ -1286,13 +1318,13 @@ header h1::before {
 
     text-align: center;
 
-    padding: 10px;
+    padding: 5px;
 
     background: transparent;
 
     border: none;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     overflow: hidden;
 
@@ -1306,9 +1338,6 @@ header h1::before {
 
 .about-image:hover {
     transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .image-title {
@@ -1361,6 +1390,7 @@ header h1::before {
     box-shadow:
         0 12px 30px rgba(0, 150, 255, 0.2);
 }
+
 
 /* =========================================
    BOTON VOLVER
@@ -1551,7 +1581,9 @@ footer strong,
     }
 
 
-    /* ACERCA */
+    /* =====================================
+       ACERCA - TABLET / MOVIL
+    ===================================== */
 
     .about-main {
         padding: 30px 15px;
@@ -1569,6 +1601,9 @@ footer strong,
         grid-template-columns: 1fr;
     }
 
+    .objetivo,
+    .skills,
+    .futuro,
     .integrantes,
     .como-jugar {
         grid-column: span 1;
@@ -1580,7 +1615,9 @@ footer strong,
     }
 
 
-    /* MENU MOVIL */
+    /* =====================================
+       MENU MOVIL
+    ===================================== */
 
     .menu-toggle {
         display: block;
@@ -1629,9 +1666,9 @@ footer strong,
     .about-image {
         margin-top: 30px;
 
-        padding: 18px;
+        padding: 3px;
 
-        border-radius: 18px;
+        border-radius: 15px;
     }
 
     .image-title {
@@ -1639,10 +1676,20 @@ footer strong,
     }
 
     .about-image img {
-        border-radius: 12px;
+        max-width: 400px;
+
+        border-radius: 10px;
+    }
+
+    .games-list {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
 
 @media (max-width: 500px) {
 
@@ -1664,6 +1711,8 @@ footer strong,
 
     .info-card {
         padding: 23px;
+
+        min-height: auto;
     }
 
     .member {
@@ -1673,6 +1722,12 @@ footer strong,
     .member-avatar {
         min-width: 45px;
     }
-}
+
+    .games-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        max-width: 320px;
     }
 }
