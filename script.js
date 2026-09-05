@@ -9,7 +9,7 @@ const errorMsg = document.getElementById('errorMsg');
 // Credenciales de ejemplo (puedes cambiarlas a tu gusto)
 
 
-if (usuarioInput.trim() !== "" === u && passwordInput.trim() !== "") {
+if (usuarioInput.trim() !== "" && passwordInput.trim() !== "") {
 // Si coincide, redirige a la página principal
 window.location.href = "principal.html";
 } else {
