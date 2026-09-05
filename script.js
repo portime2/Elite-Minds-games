@@ -7,9 +7,9 @@ const usuarioInput = document.getElementById('usuario').value;
 const passwordInput = document.getElementById('password').value;
 const errorMsg = document.getElementById('errorMsg');
 // Credenciales de ejemplo (puedes cambiarlas a tu gusto)
-const usuarioValido = "admin";
-const passwordValido = "123";
-if (usuarioInput === usuarioValido && passwordInput === passwordValido) {
+
+
+if (usuarioInput.trim() !== "" === u && passwordInput.trim() !== "") {
 // Si coincide, redirige a la página principal
 window.location.href = "principal.html";
 } else {
