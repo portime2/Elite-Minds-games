@@ -1,90 +1,26 @@
-/* ═══════════════════════════════════════════════
-   🎮 AHORCADO — GAMER HUD / NEON EDITION
-═══════════════════════════════════════════════ */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-}
-
-:root {
-    --bg-1: #020617;
-    --bg-2: #071a2f;
-    --bg-3: #16052d;
-
-    --cyan: #22d3ee;
-    --cyan-bright: #67e8f9;
-    --teal: #14b8a6;
-
-    --purple: #8b5cf6;
-    --purple-light: #a78bfa;
-
-    --green: #22c55e;
-    --green-light: #86efac;
-
-    --red: #ef4444;
-    --red-light: #fca5a5;
-
-    --white: #f8fafc;
-    --gray: #94a3b8;
-
-    --panel: rgba(7, 18, 35, .88);
-    --panel-light: rgba(15, 35, 55, .8);
-
-    --border: rgba(34, 211, 238, .25);
-}
-
-
-/* ═══════════════════════════════════════════════
-   CUERPO
-═══════════════════════════════════════════════ */
+/* =====================================================
+   🎮 AHORCADO — ESTILO GAMER NEÓN
+   ⚠️ PEGA ESTO AL FINAL DE TU CSS
+===================================================== */
 
 body {
-    min-height: 100vh;
-
-    color: var(--white);
-
     background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(124, 58, 237, .22),
-            transparent 28%
-        ),
+        radial-gradient(circle at 10% 10%, #5b21b6 0%, transparent 25%),
+        radial-gradient(circle at 90% 20%, #0369a1 0%, transparent 25%),
+        radial-gradient(circle at 50% 100%, #065f46 0%, transparent 30%),
+        #020617 !important;
 
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(6, 182, 212, .16),
-            transparent 30%
-        ),
+    color: #f8fafc !important;
 
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(20, 184, 166, .12),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            var(--bg-1),
-            var(--bg-2) 50%,
-            var(--bg-3)
-        );
-
-    background-size: 180% 180%;
-
-    animation: fondoMovimiento 15s ease-in-out infinite;
-
-    overflow-x: hidden;
+    animation: none !important;
 
     position: relative;
 }
 
 
-/* ═══════════════════════════════════════════════
-   GRID FUTURISTA DE FONDO
-═══════════════════════════════════════════════ */
+/* =====================================================
+   FONDO ANIMADO
+===================================================== */
 
 body::before {
     content: "";
@@ -95,645 +31,499 @@ body::before {
 
     pointer-events: none;
 
-    background-image:
+    background:
         linear-gradient(
-            rgba(34, 211, 238, .025) 1px,
+            rgba(34, 211, 238, .035) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(34, 211, 238, .025) 1px,
+            rgba(34, 211, 238, .035) 1px,
             transparent 1px
         );
 
-    background-size: 45px 45px;
+    background-size: 40px 40px;
 
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 90%
-    );
+    animation: gridMove 10s linear infinite;
+
+    z-index: -1;
 }
 
-
-/* ═══════════════════════════════════════════════
-   LUCES DECORATIVAS
-═══════════════════════════════════════════════ */
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 280px;
-    height: 280px;
-
-    top: 30%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: rgba(34, 211, 238, .06);
-
-    filter: blur(70px);
-
-    pointer-events: none;
-}
-
-
-/* ═══════════════════════════════════════════════
-   ANIMACIÓN DEL FONDO
-═══════════════════════════════════════════════ */
-
-@keyframes fondoMovimiento {
-
-    0% {
-        background-position: 0% 50%;
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
     }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
+    to {
+        background-position: 40px 40px;
     }
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    HEADER
-═══════════════════════════════════════════════ */
+===================================================== */
 
 header {
-    width: 100%;
+    background: rgba(2, 6, 23, .92) !important;
 
-    padding: 17px 40px;
+    border-bottom: 1px solid #22d3ee !important;
 
-    display: flex;
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, .15) !important;
 
-    justify-content: space-between;
-
-    align-items: center;
+    backdrop-filter: blur(20px);
 
     position: sticky;
 
     top: 0;
 
     z-index: 100;
-
-    background: rgba(2, 6, 23, .82);
-
-    backdrop-filter: blur(20px);
-
-    border-bottom: 1px solid rgba(34, 211, 238, .2);
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, .35);
 }
 
 
 header h1 {
-    color: white;
-
-    font-size: 26px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
+    color: #67e8f9 !important;
 
     text-shadow:
-        0 0 8px var(--cyan),
-        0 0 20px rgba(34, 211, 238, .5);
+        0 0 5px #22d3ee,
+        0 0 15px #22d3ee,
+        0 0 35px rgba(34, 211, 238, .8) !important;
 
-    margin: 0;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
+@keyframes titleGlow {
+    from {
+        text-shadow:
+            0 0 5px #22d3ee;
+    }
 
-header h1::before {
-    content: "🎮 ";
-}
-
-
-/* ═══════════════════════════════════════════════
-   MENÚ
-═══════════════════════════════════════════════ */
-
-.nav-menu {
-    list-style: none;
-
-    display: flex;
-
-    gap: 8px;
+    to {
+        text-shadow:
+            0 0 10px #22d3ee,
+            0 0 25px #22d3ee;
+    }
 }
 
 
 .nav-menu li a {
-    display: block;
+    color: #94a3b8 !important;
 
-    padding: 9px 15px;
-
-    color: #94a3b8;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    border: 1px solid transparent;
-
-    border-radius: 10px;
-
-    transition:
-        color .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+    transition: .25s ease !important;
 }
 
 
 .nav-menu li a:hover {
-    color: white;
+    color: #67e8f9 !important;
 
-    background: rgba(34, 211, 238, .08);
-
-    border-color: rgba(34, 211, 238, .25);
+    background: rgba(34, 211, 238, .1) !important;
 
     box-shadow:
-        0 0 18px rgba(34, 211, 238, .12);
+        0 0 20px rgba(34, 211, 238, .3) !important;
+
+    transform: translateY(-2px);
 }
 
 
-/* ═══════════════════════════════════════════════
-   CONTENEDOR PRINCIPAL
-═══════════════════════════════════════════════ */
+/* =====================================================
+   PANEL PRINCIPAL
+===================================================== */
 
 #juego {
-    width: 94%;
+    width: 94% !important;
 
-    max-width: 680px;
+    max-width: 720px !important;
 
-    margin: 45px auto;
+    margin: 45px auto !important;
 
-    padding: 32px;
-
-    position: relative;
-
-    text-align: center;
+    padding: 35px !important;
 
     background:
         linear-gradient(
             145deg,
-            rgba(7, 24, 39, .94),
-            rgba(5, 15, 30, .9)
-        );
+            rgba(8, 30, 48, .96),
+            rgba(5, 15, 30, .96)
+        ) !important;
 
-    border: 1px solid rgba(34, 211, 238, .3);
+    border: 2px solid #14b8a6 !important;
 
-    border-radius: 28px;
+    border-radius: 28px !important;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, .5),
-        0 0 45px rgba(20, 184, 166, .08),
-        inset 0 1px 0 rgba(255, 255, 255, .05);
+        0 0 20px rgba(20, 184, 166, .3),
+        0 0 60px rgba(20, 184, 166, .12),
+        inset 0 0 30px rgba(0, 0, 0, .3) !important;
 
     backdrop-filter: blur(20px);
+
+    position: relative;
 
     overflow: hidden;
 }
 
 
-/* Línea superior */
+/* Línea brillante superior */
 
-#juego::before {
+#juego::after {
     content: "";
 
     position: absolute;
 
     top: 0;
-    left: 10%;
 
-    width: 80%;
+    left: -100%;
+
+    width: 100%;
+
     height: 2px;
 
     background: linear-gradient(
         90deg,
         transparent,
-        var(--cyan),
-        var(--purple),
+        #22d3ee,
+        #a78bfa,
         transparent
     );
 
-    box-shadow:
-        0 0 18px var(--cyan);
+    animation: linea 3s linear infinite;
+}
+
+@keyframes linea {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 
-/* ═══════════════════════════════════════════════
-   TÍTULO
-═══════════════════════════════════════════════ */
+/* =====================================================
+   TÍTULO DEL JUEGO
+===================================================== */
 
 #juego h1 {
-    color: var(--cyan-bright);
+    color: #67e8f9 !important;
 
-    font-size: 2.5rem;
-
-    margin-bottom: 8px;
-
-    letter-spacing: 3px;
+    font-size: 2.7rem !important;
 
     font-weight: 900;
 
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
     text-shadow:
-        0 0 8px var(--cyan),
-        0 0 25px rgba(34, 211, 238, .5);
+        0 0 5px #22d3ee,
+        0 0 15px #22d3ee,
+        0 0 35px rgba(34, 211, 238, .7) !important;
+
+    margin-bottom: 10px !important;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    SUBTÍTULO
-═══════════════════════════════════════════════ */
+===================================================== */
 
 .subtitulo {
-    color: var(--gray);
-
-    font-size: .9rem;
-
-    margin-bottom: 22px;
+    color: #a5b4fc !important;
 
     letter-spacing: 1px;
+
+    margin-bottom: 25px !important;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    MARCADOR
-═══════════════════════════════════════════════ */
+===================================================== */
 
 .marcador {
-    display: flex;
+    gap: 20px !important;
 
-    justify-content: center;
-
-    gap: 18px;
-
-    margin-bottom: 20px;
+    margin-bottom: 25px !important;
 }
 
 
 .marca {
-    min-width: 130px;
-
-    padding: 10px 20px;
+    min-width: 145px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(30, 41, 59, .9),
-            rgba(15, 23, 42, .9)
-        );
+            #111827,
+            #1e1b4b
+        ) !important;
 
-    border: 1px solid rgba(139, 92, 246, .35);
+    border: 1px solid #6366f1 !important;
 
-    border-radius: 14px;
+    border-radius: 15px !important;
 
-    color: #a5b4fc;
+    padding: 12px 22px !important;
 
-    font-size: .8rem;
+    color: #a5b4fc !important;
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .04);
+        0 0 15px rgba(99, 102, 241, .15);
 
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+    transition: .3s ease;
 }
 
 
 .marca:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 
-    border-color: var(--purple);
+    border-color: #a78bfa !important;
 
     box-shadow:
-        0 0 20px rgba(139, 92, 246, .2);
+        0 0 25px rgba(139, 92, 246, .35);
 }
 
 
 .marca span {
-    display: block;
+    color: white !important;
 
-    margin-top: 3px;
-
-    font-size: 1.35rem;
-
-    font-weight: 900;
-
-    color: white;
+    font-size: 1.5rem !important;
 
     text-shadow:
-        0 0 10px rgba(255, 255, 255, .25);
+        0 0 10px rgba(255, 255, 255, .3);
 }
 
 
-/* ═══════════════════════════════════════════════
-   LIENZO
-═══════════════════════════════════════════════ */
+/* =====================================================
+   CANVAS
+===================================================== */
 
 #lienzo {
-    display: block;
-
     width: 100%;
 
     background:
         radial-gradient(
             circle,
-            rgba(20, 184, 166, .06),
+            rgba(20, 184, 166, .08),
             transparent 65%
         ),
-        #020b12;
+        #020b12 !important;
 
-    border: 2px solid rgba(20, 184, 166, .55);
+    border: 2px solid #14b8a6 !important;
 
-    border-radius: 20px;
-
-    margin-bottom: 22px;
+    border-radius: 20px !important;
 
     box-shadow:
-        0 0 25px rgba(20, 184, 166, .08),
-        inset 0 0 30px rgba(0, 0, 0, .5);
+        0 0 20px rgba(20, 184, 166, .2),
+        inset 0 0 30px rgba(0, 0, 0, .6) !important;
 
     transition:
-        border-color .35s ease,
-        box-shadow .35s ease;
+        border-color .3s ease,
+        box-shadow .3s ease !important;
 }
 
-
-/* Victoria */
 
 #lienzo.gano {
-    border-color: var(--green);
+    border-color: #22c55e !important;
 
     box-shadow:
-        0 0 25px rgba(34, 197, 94, .35),
-        0 0 60px rgba(34, 197, 94, .12);
+        0 0 25px #22c55e,
+        0 0 60px rgba(34, 197, 94, .3) !important;
 }
 
-
-/* Derrota */
 
 #lienzo.perdio {
-    border-color: var(--red);
+    border-color: #ef4444 !important;
 
     box-shadow:
-        0 0 25px rgba(239, 68, 68, .35),
-        0 0 60px rgba(239, 68, 68, .12);
+        0 0 25px #ef4444,
+        0 0 60px rgba(239, 68, 68, .3) !important;
 }
 
 
-/* ═══════════════════════════════════════════════
-   INFORMACIÓN
-═══════════════════════════════════════════════ */
-
-.info-palabra {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 10px;
-}
-
+/* =====================================================
+   CATEGORÍA
+===================================================== */
 
 .categoria-badge {
-    display: inline-block;
+    background: rgba(139, 92, 246, .12) !important;
 
-    padding: 5px 13px;
+    border: 1px solid #8b5cf6 !important;
 
-    border-radius: 50px;
+    color: #c4b5fd !important;
 
-    background: rgba(139, 92, 246, .1);
+    padding: 6px 14px !important;
 
-    border: 1px solid rgba(139, 92, 246, .45);
-
-    color: var(--purple-light);
-
-    font-size: .78rem;
-
-    font-weight: 700;
+    border-radius: 50px !important;
 
     box-shadow:
-        0 0 15px rgba(139, 92, 246, .08);
+        0 0 15px rgba(139, 92, 246, .15);
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    PALABRA
-═══════════════════════════════════════════════ */
+===================================================== */
 
 #palabraDisplay {
-    display: flex;
+    gap: 12px !important;
 
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    margin: 22px 0 18px;
+    margin: 25px 0 !important;
 }
 
 
 .letra-slot {
-    width: 43px;
+    width: 45px !important;
 
-    height: 55px;
+    height: 58px !important;
 
-    display: flex;
+    border-bottom: 4px solid #22d3ee !important;
 
-    justify-content: center;
+    color: white !important;
 
-    align-items: center;
-
-    border-bottom: 3px solid var(--cyan);
-
-    color: white;
-
-    font-size: 1.9rem;
-
-    font-weight: 900;
+    font-size: 2rem !important;
 
     text-shadow:
-        0 0 8px rgba(255, 255, 255, .25);
+        0 0 10px rgba(34, 211, 238, .5);
 
-    transition:
-        color .2s ease,
-        border-color .2s ease,
-        background .2s ease;
+    transition: .25s ease !important;
 }
 
 
 .letra-slot:hover {
-    color: var(--cyan-bright);
+    color: #67e8f9 !important;
 
-    border-color: var(--cyan-bright);
+    border-color: #67e8f9 !important;
 
-    background: rgba(34, 211, 238, .04);
+    transform: translateY(-4px) !important;
+
+    text-shadow:
+        0 0 15px #22d3ee;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    ANIMACIÓN DE LETRA
-═══════════════════════════════════════════════ */
+===================================================== */
 
 .letra-slot.nueva {
-    animation: letraRevelada .35s ease-out;
+    animation: letraNueva .4s ease !important;
 }
 
-
-@keyframes letraRevelada {
+@keyframes letraNueva {
 
     0% {
-        opacity: .3;
+        opacity: 0;
 
-        transform: scale(.65);
-
-        color: var(--cyan);
+        transform: scale(.5);
     }
 
     60% {
         opacity: 1;
 
-        transform: scale(1.15);
+        transform: scale(1.2);
 
-        color: var(--cyan-bright);
+        color: #67e8f9;
     }
 
     100% {
-        opacity: 1;
-
         transform: scale(1);
-
-        color: white;
     }
 }
 
 
-/* ═══════════════════════════════════════════════
-   LETRAS INCORRECTAS
-═══════════════════════════════════════════════ */
+/* =====================================================
+   ERRORES
+===================================================== */
 
 #incorrectas {
-    min-height: 1.4rem;
+    color: #fca5a5 !important;
 
-    margin-bottom: 18px;
+    font-weight: bold;
 
-    color: var(--red-light);
-
-    font-size: .9rem;
-
-    font-weight: 700;
+    text-shadow:
+        0 0 8px rgba(239, 68, 68, .4);
 }
 
 
 #erroresInfo {
-    color: #64748b;
-
-    font-size: .8rem;
-
-    margin-bottom: 8px;
+    color: #64748b !important;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* =====================================================
    TECLADO
-═══════════════════════════════════════════════ */
+===================================================== */
 
 #teclado {
-    display: grid;
+    grid-template-columns: repeat(7, 1fr) !important;
 
-    grid-template-columns: repeat(7, 1fr);
+    gap: 9px !important;
 
-    gap: 8px;
+    margin-top: 20px;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px !important;
 }
 
 
 .tecla {
-    height: 48px;
+    height: 50px !important;
 
-    border: 1px solid rgba(34, 211, 238, .18);
+    border: 1px solid rgba(34, 211, 238, .25) !important;
 
-    border-radius: 11px;
+    border-radius: 12px !important;
 
     background:
         linear-gradient(
             145deg,
-            #123b48,
-            #0b2632
-        );
+            #164e63,
+            #083344
+        ) !important;
 
-    color: #dffcff;
+    color: #ecfeff !important;
 
-    font-size: 16px;
+    font-size: 17px !important;
 
     font-weight: 900;
 
-    cursor: pointer;
-
     box-shadow:
-        0 5px 12px rgba(0, 0, 0, .25),
-        inset 0 1px 0 rgba(255, 255, 255, .05);
+        0 5px 12px rgba(0, 0, 0, .3),
+        inset 0 1px 0 rgba(255, 255, 255, .08);
 
     transition:
         transform .15s ease,
         background .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
+        box-shadow .2s ease !important;
 }
 
 
 /* Hover */
 
 .tecla:hover:not(.usada) {
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.04) !important;
 
     background:
         linear-gradient(
             145deg,
-            #14b8a6,
+            #22d3ee,
             #0f766e
-        );
-
-    border-color: var(--cyan);
-
-    color: white;
+        ) !important;
 
     box-shadow:
-        0 7px 20px rgba(20, 184, 166, .3),
-        0 0 15px rgba(34, 211, 238, .15);
+        0 8px 25px rgba(34, 211, 238, .35),
+        0 0 15px rgba(34, 211, 238, .25) !important;
 }
 
 
 /* Click */
 
 .tecla:active:not(.usada) {
-    transform: translateY(1px) scale(.94);
+    transform: scale(.9) !important;
 }
 
 
-/* ═══════════════════════════════════════════════
-   TECLA CORRECTA
-═══════════════════════════════════════════════ */
+/* =====================================================
+   LETRA CORRECTA
+===================================================== */
 
 .tecla.correcto {
     background:
@@ -745,24 +535,21 @@ header h1::before {
 
     border-color: #4ade80 !important;
 
-    color: white;
-
     box-shadow:
-        0 0 15px rgba(34, 197, 94, .4),
-        inset 0 1px 0 rgba(255, 255, 255, .15);
+        0 0 20px rgba(34, 197, 94, .5) !important;
 
-    animation: teclaCorrecta .3s ease;
+    animation: correcto .35s ease !important;
 }
 
 
-@keyframes teclaCorrecta {
+@keyframes correcto {
 
     0% {
-        transform: scale(.8);
+        transform: scale(.7);
     }
 
     60% {
-        transform: scale(1.12);
+        transform: scale(1.15);
     }
 
     100% {
@@ -771,9 +558,9 @@ header h1::before {
 }
 
 
-/* ═══════════════════════════════════════════════
-   TECLA INCORRECTA
-═══════════════════════════════════════════════ */
+/* =====================================================
+   LETRA INCORRECTA
+===================================================== */
 
 .tecla.incorrecto {
     background:
@@ -785,16 +572,14 @@ header h1::before {
 
     border-color: #f87171 !important;
 
-    color: white;
-
-    animation: teclaError .35s ease;
-
     box-shadow:
-        0 0 18px rgba(239, 68, 68, .35);
+        0 0 20px rgba(239, 68, 68, .5) !important;
+
+    animation: errorTecla .35s ease !important;
 }
 
 
-@keyframes teclaError {
+@keyframes errorTecla {
 
     0%,
     100% {
@@ -802,114 +587,106 @@ header h1::before {
     }
 
     25% {
-        transform: translateX(-5px);
+        transform: translateX(-6px);
     }
 
     50% {
-        transform: translateX(5px);
+        transform: translateX(6px);
     }
 
     75% {
-        transform: translateX(-3px);
+        transform: translateX(-4px);
     }
 }
 
 
-/* Tecla utilizada */
+/* =====================================================
+   USADA
+===================================================== */
 
 .tecla.usada {
-    opacity: .45;
+    opacity: .35 !important;
 
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 
     transform: none !important;
-
-    box-shadow: none;
 }
 
 
-/* ═══════════════════════════════════════════════
-   BARRA DE VIDAS
-═══════════════════════════════════════════════ */
+/* =====================================================
+   VIDAS
+===================================================== */
 
 .vida-bar {
-    display: flex;
+    gap: 7px !important;
 
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 6px;
-
-    margin: 8px 0 18px;
+    margin: 10px 0 20px !important;
 }
 
 
 .vida {
-    width: 28px;
+    width: 32px !important;
 
-    height: 8px;
+    height: 9px !important;
 
-    border-radius: 50px;
+    border-radius: 50px !important;
 
-    background: #1f2937;
+    background: #1e293b !important;
 
-    border: 1px solid #334155;
-
-    transition:
-        background .3s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
+    border: 1px solid #334155 !important;
 }
 
 
 .vida.activa {
-    background: var(--green);
+    background: #22c55e !important;
 
-    border-color: #4ade80;
+    border-color: #86efac !important;
 
     box-shadow:
-        0 0 10px rgba(34, 197, 94, .65);
+        0 0 10px #22c55e !important;
+
+    animation: vidaPulse 1.2s infinite alternate;
 }
 
 
-/* ═══════════════════════════════════════════════
-   BOTONES DE ACCIÓN
-═══════════════════════════════════════════════ */
+@keyframes vidaPulse {
+
+    from {
+        box-shadow:
+            0 0 5px #22c55e;
+    }
+
+    to {
+        box-shadow:
+            0 0 15px #22c55e;
+    }
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
 
 .botones-accion {
-    display: flex;
+    gap: 12px !important;
 
-    justify-content: center;
-
-    gap: 10px;
-
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 
 .btn {
-    padding: 10px 20px;
+    padding: 11px 22px !important;
 
-    border-radius: 12px;
+    border-radius: 12px !important;
 
-    border: 1px solid transparent;
+    font-weight: 900 !important;
 
-    font-size: .85rem;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
+    transition: .2s ease !important;
 }
 
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px) !important;
 }
 
 
@@ -921,25 +698,18 @@ header h1::before {
             135deg,
             #8b5cf6,
             #6d28d9
-        );
+        ) !important;
 
-    color: white;
+    color: white !important;
 
     box-shadow:
-        0 5px 18px rgba(139, 92, 246, .25);
+        0 5px 20px rgba(139, 92, 246, .3);
 }
 
 
 .btn-reiniciar:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #a78bfa,
-            #7c3aed
-        );
-
     box-shadow:
-        0 7px 25px rgba(139, 92, 246, .4);
+        0 8px 30px rgba(139, 92, 246, .5);
 }
 
 
@@ -947,151 +717,111 @@ header h1::before {
 
 .btn-pista {
     background:
-        rgba(8, 47, 73, .8);
+        linear-gradient(
+            135deg,
+            #075985,
+            #0e7490
+        ) !important;
 
-    color: var(--cyan-bright);
+    color: #cffafe !important;
 
-    border-color: rgba(34, 211, 238, .35);
+    border: 1px solid #22d3ee !important;
 
     box-shadow:
-        0 5px 15px rgba(34, 211, 238, .08);
+        0 5px 20px rgba(34, 211, 238, .15);
 }
 
 
 .btn-pista:hover {
     background:
-        rgba(8, 145, 178, .55);
-
-    color: white;
-
-    border-color: var(--cyan);
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #0e7490
+        ) !important;
 
     box-shadow:
-        0 7px 22px rgba(34, 211, 238, .2);
+        0 8px 30px rgba(34, 211, 238, .3);
 }
 
 
-.btn-pista:disabled {
-    opacity: .3;
-
-    cursor: default;
-
-    transform: none;
-}
-
-
-/* ═══════════════════════════════════════════════
-   BOTÓN PRINCIPAL
-═══════════════════════════════════════════════ */
+/* =====================================================
+   BOTÓN REINICIAR PRINCIPAL
+===================================================== */
 
 #btnReiniciar {
-    margin-top: 20px;
+    padding: 14px 35px !important;
 
-    padding: 13px 32px;
+    margin-top: 22px !important;
 
-    border: 1px solid rgba(34, 211, 238, .4);
+    border: none !important;
 
-    border-radius: 50px;
+    border-radius: 50px !important;
 
     background:
         linear-gradient(
             135deg,
-            var(--cyan),
-            var(--teal)
-        );
+            #22d3ee,
+            #14b8a6
+        ) !important;
 
-    color: #022c22;
+    color: #022c22 !important;
 
-    font-size: .95rem;
+    font-size: 1rem !important;
 
-    font-weight: 900;
+    font-weight: 900 !important;
 
     cursor: pointer;
 
     box-shadow:
-        0 8px 25px rgba(20, 184, 166, .25);
+        0 8px 25px rgba(20, 184, 166, .35) !important;
 
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        filter .2s ease;
+    transition: .25s ease !important;
 }
 
 
 #btnReiniciar:hover {
-    transform: translateY(-4px) scale(1.03);
-
-    filter: brightness(1.12);
+    transform: translateY(-4px) scale(1.04) !important;
 
     box-shadow:
-        0 12px 35px rgba(34, 211, 238, .4);
+        0 12px 35px rgba(34, 211, 238, .5) !important;
+
+    filter: brightness(1.12);
 }
 
 
 #btnReiniciar:active {
-    transform: scale(.97);
+    transform: scale(.96) !important;
 }
 
 
-/* ═══════════════════════════════════════════════
-   MENSAJE DE RESULTADO
-═══════════════════════════════════════════════ */
-
-#mensaje {
-    min-height: 42px;
-
-    margin-top: 20px;
-
-    font-size: 1.6rem;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-
-/* Victoria */
+/* =====================================================
+   MENSAJE GANAR
+===================================================== */
 
 #mensaje.gano {
-    color: var(--green-light);
+    color: #86efac !important;
+
+    font-size: 1.8rem !important;
 
     text-shadow:
-        0 0 8px var(--green),
-        0 0 25px rgba(34, 197, 94, .55);
+        0 0 8px #22c55e,
+        0 0 25px rgba(34, 197, 94, .7) !important;
 
-    animation: resultadoGanar .45s ease-out;
+    animation: victoria .5s ease !important;
 }
 
 
-/* Derrota */
-
-#mensaje.perdio {
-    color: var(--red-light);
-
-    text-shadow:
-        0 0 8px var(--red),
-        0 0 25px rgba(239, 68, 68, .5);
-
-    animation: resultadoPerder .4s ease-out;
-}
-
-
-/* ═══════════════════════════════════════════════
-   ANIMACIONES DE RESULTADO
-═══════════════════════════════════════════════ */
-
-@keyframes resultadoGanar {
+@keyframes victoria {
 
     0% {
         opacity: 0;
 
-        transform: scale(.75);
+        transform: scale(.5);
     }
 
     60% {
-        opacity: 1;
-
-        transform: scale(1.12);
+        transform: scale(1.15);
     }
 
     100% {
@@ -1102,192 +832,131 @@ header h1::before {
 }
 
 
-@keyframes resultadoPerder {
+/* =====================================================
+   MENSAJE PERDER
+===================================================== */
 
-    0% {
-        opacity: 0;
+#mensaje.perdio {
+    color: #fca5a5 !important;
 
-        transform: translateY(-10px);
+    font-size: 1.8rem !important;
+
+    text-shadow:
+        0 0 8px #ef4444,
+        0 0 25px rgba(239, 68, 68, .7) !important;
+
+    animation: derrota .4s ease !important;
+}
+
+
+@keyframes derrota {
+
+    0%,
+    100% {
+        transform: translateX(0);
     }
 
-    100% {
-        opacity: 1;
+    25% {
+        transform: translateX(-8px);
+    }
 
-        transform: translateY(0);
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-5px);
     }
 }
 
 
-/* ═══════════════════════════════════════════════
-   RESPONSIVE — TABLET
-═══════════════════════════════════════════════ */
+/* =====================================================
+   MÓVIL
+===================================================== */
 
 @media (max-width: 700px) {
 
     header {
-        padding: 15px 20px;
+        padding: 15px 20px !important;
 
         flex-direction: column;
 
-        gap: 14px;
-    }
-
-
-    header h1 {
-        font-size: 22px;
-    }
-
-
-    .nav-menu {
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-
-    .nav-menu li a {
-        font-size: 13px;
-
-        padding: 8px 12px;
+        gap: 15px;
     }
 
 
     #juego {
-        width: 94%;
+        width: 95% !important;
 
-        margin: 25px auto;
+        margin: 25px auto !important;
 
-        padding: 23px;
+        padding: 22px !important;
 
-        border-radius: 22px;
+        border-radius: 22px !important;
     }
 
 
     #juego h1 {
-        font-size: 2rem;
+        font-size: 2rem !important;
 
         letter-spacing: 2px;
     }
 
 
     #teclado {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr) !important;
 
-        gap: 7px;
+        gap: 7px !important;
     }
 
 
     .tecla {
-        height: 44px;
+        height: 44px !important;
 
-        font-size: 15px;
+        font-size: 15px !important;
     }
 
 
     .letra-slot {
-        width: 36px;
+        width: 36px !important;
 
-        height: 47px;
+        height: 48px !important;
 
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
     }
 }
 
 
-/* ═══════════════════════════════════════════════
-   RESPONSIVE — MÓVIL
-═══════════════════════════════════════════════ */
-
-@media (max-width: 450px) {
+@media (max-width: 430px) {
 
     #juego {
-        width: 96%;
-
-        padding: 18px;
-    }
-
-
-    #juego h1 {
-        font-size: 1.7rem;
-    }
-
-
-    .marcador {
-        gap: 8px;
-    }
-
-
-    .marca {
-        min-width: 110px;
-
-        padding: 8px 12px;
-    }
-
-
-    .marca span {
-        font-size: 1.15rem;
+        padding: 18px !important;
     }
 
 
     #teclado {
-        grid-template-columns: repeat(5, 1fr);
-
-        gap: 6px;
+        grid-template-columns: repeat(5, 1fr) !important;
     }
 
 
     .tecla {
-        height: 40px;
+        height: 40px !important;
 
-        font-size: 14px;
-
-        border-radius: 9px;
+        font-size: 14px !important;
     }
 
 
     .letra-slot {
-        width: 30px;
+        width: 30px !important;
 
-        height: 42px;
+        height: 42px !important;
 
-        font-size: 1.4rem;
+        font-size: 1.4rem !important;
     }
 
 
-    .botones-accion {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-
-    .btn {
-        width: 100%;
-    }
-
-
-    #btnReiniciar {
-        width: 100%;
-    }
-}
-
-
-/* ═══════════════════════════════════════════════
-   REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE
-═══════════════════════════════════════════════ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    body {
-        animation: none;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+    .marca {
+        min-width: 105px;
     }
 }
 
