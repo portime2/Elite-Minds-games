@@ -13,9 +13,9 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
   min-height: 100vh;
   overflow-x: hidden;
 
@@ -23,22 +23,25 @@ body {
     radial-gradient(circle at 20% 20%, rgba(0, 229, 255, 0.18), transparent 30%),
     radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.22), transparent 30%),
     linear-gradient(135deg, #020617, #071a38 50%, #09052b);
-
-  position: relative;
 }
 
-/* Fondo decorativo */
+
+/* =========================================
+   FONDO
+========================================= */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: -1;
   pointer-events: none;
+
   background-image:
     linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
+
   background-size: 45px 45px;
-  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 
@@ -58,19 +61,17 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(2, 8, 23, 0.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(2, 8, 23, 0.9);
 
-  border-bottom: 1px solid rgba(0, 229, 255, 0.18);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
 
   box-shadow:
     0 10px 35px rgba(0, 0, 0, 0.35),
-    0 0 30px rgba(0, 229, 255, 0.04);
+    0 0 30px rgba(0, 229, 255, 0.05);
 }
 
 header h1 {
-  color: #fff;
+  color: #ffffff;
   font-size: 27px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -109,15 +110,11 @@ header h1::before {
 
   border-radius: 10px;
 
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: #fff;
+  color: #ffffff;
 
   background: rgba(0, 229, 255, 0.1);
 
@@ -130,8 +127,8 @@ header h1::before {
 
 .nav-menu li a::after {
   content: "";
-  position: absolute;
 
+  position: absolute;
   left: 50%;
   bottom: 4px;
 
@@ -142,6 +139,7 @@ header h1::before {
   box-shadow: 0 0 8px #00e5ff;
 
   transform: translateX(-50%);
+
   transition: width 0.3s ease;
 }
 
@@ -151,16 +149,15 @@ header h1::before {
 
 
 /* =========================================
-   TÍTULO DEL JUEGO
+   TÍTULO
 ========================================= */
 
 body > h1 {
-  position: relative;
-
   margin-top: 55px;
   margin-bottom: 35px;
 
-  color: #fff;
+  color: #ffffff;
+
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 900;
   letter-spacing: 2px;
@@ -173,7 +170,8 @@ body > h1 {
 }
 
 @keyframes tituloFlotante {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -191,8 +189,8 @@ body > h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 
+  gap: 30px;
   margin: 30px auto;
 
   font-size: 1.4rem;
@@ -204,22 +202,18 @@ body > h1 {
 
   padding: 18px 28px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(15, 35, 65, 0.9),
-      rgba(5, 20, 40, 0.75)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(15, 35, 65, 0.95),
+    rgba(5, 20, 40, 0.9)
+  );
 
   border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: 18px;
 
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(0, 229, 255, 0.08),
-    inset 0 0 20px rgba(0, 229, 255, 0.03);
-
-  backdrop-filter: blur(10px);
+    0 0 20px rgba(0, 229, 255, 0.08);
 
   transition: 0.3s ease;
 }
@@ -246,6 +240,7 @@ body > h1 {
   margin-top: 5px;
 
   color: #00e5ff;
+
   font-size: 2.4rem;
   font-weight: 900;
 
@@ -276,14 +271,13 @@ body > h1 {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 25px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(30, 64, 175, 0.8),
-      rgba(7, 30, 70, 0.9)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(30, 64, 175, 0.9),
+    rgba(7, 30, 70, 0.95)
+  );
 
-  color: #fff;
+  color: #ffffff;
 
   font-size: 2.5rem;
   font-weight: bold;
@@ -292,11 +286,7 @@ body > h1 {
     0 10px 25px rgba(0, 0, 0, 0.35),
     inset 0 0 20px rgba(0, 229, 255, 0.04);
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .boton-opcion:hover {
@@ -304,17 +294,15 @@ body > h1 {
 
   border-color: #00e5ff;
 
-  background:
-    linear-gradient(
-      145deg,
-      #0e7490,
-      #1e3a8a
-    );
+  background: linear-gradient(
+    145deg,
+    #0e7490,
+    #1e3a8a
+  );
 
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.45),
-    0 0 25px rgba(0, 229, 255, 0.35),
-    inset 0 0 20px rgba(0, 229, 255, 0.12);
+    0 0 25px rgba(0, 229, 255, 0.35);
 }
 
 .boton-opcion:active {
@@ -323,7 +311,7 @@ body > h1 {
 
 
 /* =========================================
-   EFECTO BRILLO BOTONES
+   BRILLO DE LOS BOTONES
 ========================================= */
 
 .boton-opcion::before {
@@ -364,26 +352,24 @@ body > h1 {
   margin: 40px auto;
   padding: 30px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(15, 35, 65, 0.88),
-      rgba(5, 15, 35, 0.92)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(15, 35, 65, 0.95),
+    rgba(5, 15, 35, 0.95)
+  );
 
   border: 1px solid rgba(0, 229, 255, 0.3);
   border-radius: 22px;
 
-  color: #fff;
+  color: #ffffff;
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.4),
-    0 0 35px rgba(0, 229, 255, 0.08),
-    inset 0 0 25px rgba(0, 229, 255, 0.03);
-
-  backdrop-filter: blur(15px);
+    0 0 35px rgba(0, 229, 255, 0.08);
 
   overflow: hidden;
+
+  animation: aparecer 0.6s ease;
 }
 
 .resultado::before {
@@ -441,12 +427,8 @@ body > h1 {
 
 
 /* =========================================
-   ANIMACIÓN RESULTADO
+   ANIMACIÓN
 ========================================= */
-
-.resultado {
-  animation: aparecer 0.6s ease;
-}
 
 @keyframes aparecer {
   from {
@@ -530,7 +512,6 @@ body > h1 {
   .boton-opcion {
     width: 85px;
     height: 85px;
-
     font-size: 2rem;
     margin: 7px;
   }
@@ -547,7 +528,7 @@ body > h1 {
 
 
 /* =========================================
-   REDUCE MOTION
+   ACCESIBILIDAD
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
