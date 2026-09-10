@@ -8,22 +8,55 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-dark: #050816;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --blue: #38bdf8;
+  --cyan: #22d3ee;
+  --purple: #8b5cf6;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: rgba(56, 189, 248, 0.25);
+}
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
   text-align: center;
-  color: #fff;
+  color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
 
   background:
-    radial-gradient(circle at 50% -20%, #7c3aed 0%, transparent 40%),
-    radial-gradient(circle at 10% 80%, #ec4899 0%, transparent 25%),
-    #09090f;
+    radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.20), transparent 30%),
+    linear-gradient(135deg, #020617, #0f172a 50%, #020617);
+
+  position: relative;
 }
 
+/* Fondo decorativo */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
 
 /* =========================================
-   NAVBAR
+   BARRA DE NAVEGACIÓN
 ========================================= */
 
 header {
@@ -31,116 +64,120 @@ header {
   top: 0;
   z-index: 100;
 
+  padding: 18px 45px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 45px;
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(20px);
 
-  background: rgba(9, 9, 15, 0.88);
-  border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
 
-  backdrop-filter: blur(12px);
-
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 header h1 {
-  color: #fff;
-  font-size: 27px;
+  color: white;
+  font-size: 26px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 
   text-shadow:
-    0 0 8px #ec4899,
-    0 0 20px #7c3aed;
+    0 0 10px rgba(56, 189, 248, 0.8),
+    0 0 30px rgba(56, 189, 248, 0.35);
 }
 
 header h1::before {
   content: "🎮 ";
 }
 
-
-/* =========================================
-   MENÚ
-========================================= */
-
 .nav-menu {
+  list-style: none;
   display: flex;
   gap: 8px;
-  list-style: none;
 }
 
 .nav-menu li a {
   display: block;
 
-  padding: 10px 18px;
+  padding: 10px 17px;
 
-  color: #aaa;
+  color: var(--muted);
   text-decoration: none;
 
   font-size: 14px;
   font-weight: 700;
 
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 12px;
 
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: #fff;
+  color: white;
 
-  border-color: #ec4899;
-
-  background: rgba(236, 72, 153, 0.1);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
 
   box-shadow:
-    0 0 15px rgba(236, 72, 153, 0.3);
+    0 0 20px rgba(56, 189, 248, 0.12);
 
   transform: translateY(-2px);
 }
 
-
 /* =========================================
-   TÍTULO
+   TITULO DEL JUEGO
 ========================================= */
 
 body > h1 {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  position: relative;
 
-  font-size: clamp(2.3rem, 6vw, 4rem);
+  margin-top: 55px;
+  margin-bottom: 35px;
+
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 900;
-  letter-spacing: 3px;
+
+  color: white;
+
+  letter-spacing: -1px;
+
+  text-shadow:
+    0 0 15px rgba(56, 189, 248, 0.8),
+    0 0 45px rgba(56, 189, 248, 0.3);
+}
+
+body > h1::after {
+  content: "";
+  display: block;
+
+  width: 90px;
+  height: 4px;
+
+  margin: 15px auto 0;
+
+  border-radius: 20px;
 
   background: linear-gradient(
     90deg,
-    #fff,
-    #ec4899,
-    #a855f7,
-    #fff
+    var(--blue),
+    var(--cyan),
+    var(--purple)
   );
 
-  background-size: 300%;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: colores 5s linear infinite;
+  box-shadow:
+    0 0 15px rgba(34, 211, 238, 0.8);
 }
-
-@keyframes colores {
-  0% {
-    background-position: 0%;
-  }
-
-  100% {
-    background-position: 300%;
-  }
-}
-
 
 /* =========================================
    MARCADOR
@@ -149,140 +186,143 @@ body > h1 {
 .marcador {
   display: flex;
   justify-content: center;
+  align-items: center;
+
   gap: 25px;
 
   margin: 30px auto;
+
+  font-size: 1.4rem;
+  font-weight: 800;
 }
 
 .marcador div {
-  min-width: 210px;
+  min-width: 180px;
 
-  padding: 20px;
+  padding: 18px 28px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(30, 41, 59, 0.65)
+  );
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(56, 189, 248, 0.05);
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .marcador div:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 
-  border-color: #a855f7;
+  border-color: rgba(56, 189, 248, 0.55);
 
   box-shadow:
-    0 0 25px rgba(168, 85, 247, 0.3);
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(56, 189, 248, 0.15);
 }
 
-
 /* =========================================
-   PUNTOS
-========================================= */
-
-#puntos-jugador,
-#puntos-computadora {
-  display: block;
-
-  margin-top: 8px;
-
-  font-size: 2.7rem;
-  font-weight: 900;
-
-  color: #ec4899;
-
-  text-shadow:
-    0 0 10px #ec4899;
-}
-
-
-/* =========================================
-   BOTONES
+   OPCIONES
 ========================================= */
 
 .opciones {
-  margin: 50px 0;
+  margin: 45px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .boton-opcion {
   position: relative;
 
-  width: 115px;
-  height: 115px;
+  width: 100px;
+  height: 100px;
 
-  margin: 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
+  font-size: 2.5rem;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 24px;
 
   background:
     linear-gradient(
       145deg,
-      #181825,
-      #0d0d14
+      rgba(30, 41, 59, 0.9),
+      rgba(15, 23, 42, 0.85)
     );
 
-  color: #fff;
-
-  font-size: 2.8rem;
-
-  cursor: pointer;
+  color: white;
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.5),
-    inset 0 0 20px rgba(255, 255, 255, 0.03);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 25px rgba(0, 0, 0, 0.35);
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.25s ease,
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
-.boton-opcion:hover {
-  transform: translateY(-12px) scale(1.1);
-
-  border-color: #ec4899;
-
-  color: #fff;
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.6),
-    0 0 25px rgba(236, 72, 153, 0.5),
-    0 0 60px rgba(168, 85, 247, 0.2);
-}
-
-.boton-opcion:active {
-  transform: scale(0.92);
-}
-
-
-/* =========================================
-   ANILLO DE LOS BOTONES
-========================================= */
-
-.boton-opcion::after {
+.boton-opcion::before {
   content: "";
 
   position: absolute;
-  inset: -7px;
+  inset: -2px;
 
-  border: 1px solid rgba(236, 72, 153, 0.2);
+  border-radius: 26px;
 
-  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    transparent 40%,
+    var(--purple)
+  );
+
+  z-index: -1;
 
   opacity: 0;
 
-  transition: 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-.boton-opcion:hover::after {
-  opacity: 1;
+.boton-opcion:hover {
+  transform: translateY(-8px) scale(1.05);
+
+  border-color: var(--blue);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 116, 144, 0.5),
+      rgba(30, 41, 59, 0.95)
+    );
 
   box-shadow:
-    0 0 20px rgba(236, 72, 153, 0.5);
+    0 15px 35px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(56, 189, 248, 0.3);
 }
 
+.boton-opcion:hover::before {
+  opacity: 0.35;
+}
+
+.boton-opcion:active {
+  transform: translateY(-2px) scale(0.96);
+}
 
 /* =========================================
    RESULTADO
@@ -291,125 +331,124 @@ body > h1 {
 .resultado {
   position: relative;
 
-  width: min(650px, 90%);
+  width: min(700px, 85%);
 
   margin: 40px auto;
-  padding: 30px;
+  padding: 28px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(25, 20, 40, 0.95),
-      rgba(12, 12, 20, 0.95)
+      rgba(15, 23, 42, 0.92),
+      rgba(30, 41, 59, 0.7)
     );
 
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 22px;
 
-  border-radius: 20px;
+  color: white;
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(168, 85, 247, 0.1);
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
-  animation: aparecer 0.5s ease;
+  backdrop-filter: blur(15px);
 }
-
-
-/* Línea superior */
 
 .resultado::before {
   content: "";
 
   position: absolute;
-
   top: 0;
-  left: 10%;
+  left: 15%;
 
-  width: 80%;
-  height: 2px;
+  width: 70%;
+  height: 1px;
 
   background: linear-gradient(
     90deg,
     transparent,
-    #ec4899,
-    #a855f7,
+    var(--blue),
     transparent
   );
 
-  box-shadow:
-    0 0 15px #ec4899;
+  box-shadow: 0 0 15px var(--blue);
 }
-
-
-/* =========================================
-   MENSAJE
-========================================= */
 
 #mensaje {
   margin-bottom: 15px;
 
-  color: #f9a8d4;
-
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 900;
 
+  color: #67e8f9;
+
   text-shadow:
-    0 0 12px rgba(236, 72, 153, 0.6);
+    0 0 10px rgba(34, 211, 238, 0.7);
 }
-
-
-/* =========================================
-   ELECCIONES
-========================================= */
 
 #elecciones {
   margin-top: 10px;
 
-  color: #c4b5fd;
+  color: #cbd5e1;
 
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
+/* =========================================
+   PUNTUACIÓN
+========================================= */
+
+#puntos-jugador,
+#puntos-computadora {
+  display: inline-block;
+
+  margin-top: 5px;
+
+  font-size: 2.2rem;
+  font-weight: 900;
+
+  color: white;
+
+  text-shadow:
+    0 0 12px rgba(56, 189, 248, 0.8);
+}
 
 /* =========================================
-   ANIMACIÓN RESULTADO
+   ANIMACIÓN
 ========================================= */
 
 @keyframes aparecer {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(15px);
+    transform: translateY(15px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 
-
-/* =========================================
-   SCROLLBAR
-========================================= */
-
-::-webkit-scrollbar {
-  width: 8px;
+body > h1,
+.marcador,
+.opciones,
+.resultado {
+  animation: aparecer 0.7s ease both;
 }
 
-::-webkit-scrollbar-track {
-  background: #09090f;
+.marcador {
+  animation-delay: 0.1s;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    #ec4899,
-    #7c3aed
-  );
-
-  border-radius: 10px;
+.opciones {
+  animation-delay: 0.2s;
 }
 
+.resultado {
+  animation-delay: 0.3s;
+}
 
 /* =========================================
    RESPONSIVE
@@ -418,9 +457,10 @@ body > h1 {
 @media (max-width: 700px) {
 
   header {
+    padding: 15px 20px;
+
     flex-direction: column;
     gap: 15px;
-    padding: 18px 15px;
   }
 
   header h1 {
@@ -433,37 +473,42 @@ body > h1 {
   }
 
   .nav-menu li a {
-    padding: 8px 11px;
-    font-size: 12px;
+    font-size: 13px;
+    padding: 8px 12px;
   }
 
   body > h1 {
-    margin-top: 40px;
     font-size: 2.2rem;
+    margin-top: 35px;
   }
 
   .marcador {
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
   }
 
   .marcador div {
     width: 85%;
   }
 
+  .opciones {
+    gap: 12px;
+  }
+
   .boton-opcion {
-    width: 90px;
-    height: 90px;
-    font-size: 2.2rem;
-    margin: 7px;
+    width: 85px;
+    height: 85px;
+    font-size: 2rem;
+    border-radius: 20px;
   }
 
   .resultado {
     width: 90%;
-    padding: 25px 18px;
+    padding: 22px 15px;
   }
 
   #mensaje {
     font-size: 1.4rem;
   }
 }
+
