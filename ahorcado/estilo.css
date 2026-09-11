@@ -1115,6 +1115,165 @@ header ul li a.activo,
 }
 
 
+/* =====================================================
+   🎨 CANVAS RESPONSIVO
+===================================================== */
+
+#lienzo {
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    display: block;
+}
+
+
+/* =====================================================
+   📱 RESPONSIVE — TABLET (≤ 900px)
+===================================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 12px 20px !important;
+    }
+
+    header h1 {
+        font-size: 1.5rem !important;
+    }
+
+    #juego {
+        width: 96% !important;
+        padding: 25px 20px !important;
+        margin: 25px auto !important;
+    }
+
+    #juego h1 {
+        font-size: 2rem !important;
+    }
+
+    .marcador {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+
+    .marca {
+        min-width: 100px;
+        padding: 10px 16px !important;
+    }
+}
+
+
+/* =====================================================
+   📱 RESPONSIVE — MÓVIL (≤ 640px)
+===================================================== */
+
+@media (max-width: 640px) {
+
+    header {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        min-height: auto !important;
+    }
+
+    header h1 {
+        font-size: 1.3rem !important;
+    }
+
+    header ul,
+    .nav-menu {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    header ul li a,
+    .nav-menu li a {
+        padding: 8px 12px !important;
+        font-size: .8rem !important;
+    }
+
+    #juego {
+        width: 100% !important;
+        border-radius: 16px !important;
+        padding: 18px 14px !important;
+        margin: 15px auto !important;
+    }
+
+    #juego h1 {
+        font-size: 1.5rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .subtitulo {
+        font-size: .9rem !important;
+    }
+
+    .marca {
+        min-width: 85px;
+        padding: 8px 10px !important;
+    }
+
+    .marca span {
+        font-size: 1.1rem !important;
+    }
+
+    #palabraDisplay {
+        gap: 6px !important;
+        margin: 15px 0 !important;
+    }
+
+    .letra-slot {
+        width: 26px !important;
+        height: 38px !important;
+        font-size: 1.2rem !important;
+    }
+
+    #teclado {
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .tecla {
+        height: 38px !important;
+        font-size: 13px !important;
+        border-radius: 8px !important;
+    }
+
+    .vida {
+        width: 22px !important;
+        height: 7px !important;
+    }
+
+    .botones-accion {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    .btn {
+        padding: 9px 16px !important;
+        font-size: .85rem !important;
+    }
+}
+
+
+/* =====================================================
+   📱 RESPONSIVE — MÓVIL PEQUEÑO (≤ 380px)
+===================================================== */
+
+@media (max-width: 380px) {
+
+    #teclado {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+
+    .letra-slot {
+        width: 22px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+    }
+}
+
+
 /* ==================================================
    FIN DEL ARCHIVO
 ===================================================== */
